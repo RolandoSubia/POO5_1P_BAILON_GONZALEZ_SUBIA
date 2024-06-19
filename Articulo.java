@@ -1,6 +1,4 @@
 
-package trabajoautonomo4;
-
 public class Articulo {
     private String titulo;
     private String codigo;
