@@ -20,9 +20,6 @@ public class Autor{
       this.campo = nuevoCampo;
     }
 
-    //public void registrarDatosAutor(String usuario, String nuevaContrasenia, String nuevaInstitucion, String nuevoCampo){
-    //}
-    
     public boolean someterRevision(){
       return true;
     }
