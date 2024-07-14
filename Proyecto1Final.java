@@ -4,6 +4,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+/**
+ * 
+ * @author Grupo3
+ * 
+ * 
+ */
 
 public class Proyecto1Final {
 
@@ -12,17 +18,22 @@ public class Proyecto1Final {
     private static final String ARTICULOS_FILE = "articulos.txt";
     private static final String REVISIONES_FILE = "revisiones.txt";
 
-    // Listas para almacenar los diferentes tipos de datos
+//    // Listas para almacenar los diferentes tipos de datos
     private static List<Usuario> usuarios = new ArrayList<>();
     private static List<Autor> autores = new ArrayList<>();
     private static List<Articulo> articulos = new ArrayList<>();
     private static List<Revision> revisiones = new ArrayList<>();
 
+    /**
+    * Es el punto de entrada de la aplicación. Inicializa los datos y proporciona un menú interactivo para el usuario.
+    *@param args Recibe los argumentos para funcionar el metodo main
+    **/
     public static void main(String[] args) {
         inicializarDatos();
 
         Scanner sc = new Scanner(System.in);
         boolean continuar = true;
+        try{
         while(continuar){
             System.out.println("|--------------------------------------------------------------|");
             System.out.println("|BIENVENIDO A LA APLICACION DE GESTION DE ARTICULOS CIENTIFICOS|");
@@ -46,6 +57,7 @@ public class Proyecto1Final {
                 default:
                     System.out.println("Opcion no valida.");
             }
+                        
             // Preguntar si desea continuar ingresando datos
             System.out.print("Desea continuar ingresando datos? (si/no): ");
             String respuesta = sc.nextLine();
@@ -53,9 +65,13 @@ public class Proyecto1Final {
             System.out.println(" ");
         }
         System.out.println("Programa finalizado.");
+        }catch(Exception e){
+                System.out.println("ERROR.VUELVA A INICIAR EL PROGRAMA");
+            }
     }
     
-    // Método para inicializar los datos desde archivos
+    /**Inicializa los datos leyendo desde archivos y cargando la información en las listas correspondientes.
+    **/
     private static void inicializarDatos() {
         try {
             // Leer datos de usuarios
